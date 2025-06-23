@@ -54,4 +54,31 @@ def resoud(grille):
                         if resoud(grille):
                             return True
                 return False
-    return True 
+    return True
+
+def affiche(grille):
+    for i in range(9):
+        print(" ".join(str(x) if x != 0 else "." for x in grille[i]))
+
+if __name__ == "__main__":
+    # Exemple de grille à résoudre (0 = case vide)
+    grille = [
+        [5, 3, 0, 0, 7, 0, 0, 0, 0],
+        [6, 0, 0, 1, 9, 5, 0, 0, 0],
+        [0, 9, 8, 0, 0, 0, 0, 6, 0],
+        [8, 0, 0, 0, 6, 0, 0, 0, 3],
+        [4, 0, 0, 8, 0, 3, 0, 0, 1],
+        [7, 0, 0, 0, 2, 0, 0, 0, 6],
+        [0, 6, 0, 0, 0, 0, 2, 8, 0],
+        [0, 0, 0, 4, 1, 9, 0, 0, 5],
+        [0, 0, 0, 0, 8, 0, 0, 7, 9]
+    ]
+
+    print("Grille initiale :")
+    affiche(grille)
+    if resoud(grille):
+        print("\nGrille résolue :")
+        affiche(grille)
+    else:
+        print("Pas de solution trouvée.")
+        
